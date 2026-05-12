@@ -3,25 +3,17 @@ import { authority } from '../data/content';
 ---
 
 <section id="authority" class="bg-white border-b border-light-gray">
-  <div class="flex items-stretch min-h-[78px] flex-wrap">
+  <div class="flex items-stretch min-h-[72px] flex-wrap">
 
-    <div class="bg-navy-dark text-white/55 text-[10px] font-semibold tracking-[2.5px] uppercase px-7 flex items-center whitespace-nowrap shrink-0">
+    <div class="bg-navy-dark text-white/40 text-[9px] font-semibold tracking-[3px] uppercase px-8 flex items-center whitespace-nowrap shrink-0 select-none">
       Trayectoria en
     </div>
 
-    <div class="flex items-center flex-1 px-2 flex-wrap">
-      {authority.logos.map((logo, i) => (
-        <div class={`flex items-center gap-2.5 px-6 py-3.5 ${i < authority.logos.length - 1 ? 'border-r border-light-gray' : ''}`}>
-          <div
-            class="w-[34px] h-[34px] rounded-md flex items-center justify-center font-extrabold text-[10px] text-white shrink-0"
-            style={`background:${logo.bg};`}
-          >
-            {logo.code}
-          </div>
-          <div>
-            <div class="text-[13px] font-bold text-navy">{logo.name}</div>
-            <div class="text-[10px] text-oxford-light">{logo.sub}</div>
-          </div>
+    <div class="flex items-center flex-1 flex-wrap divide-x divide-light-gray">
+      {authority.logos.map((logo) => (
+        <div class="flex flex-col justify-center px-7 py-4">
+          <span class="text-[12px] font-bold text-navy tracking-wide">{logo.name}</span>
+          <span class="text-[10px] text-oxford-light mt-0.5 font-medium">{logo.sub}</span>
         </div>
       ))}
     </div>
@@ -29,13 +21,17 @@ import { authority } from '../data/content';
     <a
       href={authority.award.href}
       target="_blank" rel="noopener"
-      class="flex items-center gap-3 px-7 shrink-0 no-underline transition-opacity duration-200 hover:opacity-85"
-      style="background: linear-gradient(135deg,#070F18 0%,#1E3252 100%);"
+      class="flex items-center gap-3.5 px-8 shrink-0 no-underline transition-opacity duration-200 hover:opacity-80 border-l border-white/10"
+      style="background: linear-gradient(135deg,#0D1B2A 0%,#1E3252 100%);"
     >
-      <span class="text-2xl">🥇</span>
+      <!-- Award ribbon SVG -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4973C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="8" r="6"/>
+        <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+      </svg>
       <div>
-        <div class="text-[9px] font-bold tracking-[2px] uppercase text-gold">{authority.award.label}</div>
-        <div class="text-[12px] font-bold text-white leading-snug">{authority.award.title}</div>
+        <div class="text-[9px] font-bold tracking-[2.5px] uppercase text-gold mb-0.5">{authority.award.label}</div>
+        <div class="text-[12px] font-semibold text-white leading-snug">{authority.award.title}</div>
       </div>
     </a>
 

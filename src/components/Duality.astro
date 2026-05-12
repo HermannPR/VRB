@@ -6,7 +6,7 @@ const { technical, human } = duality;
 <section id="duality" class="bg-off-white py-24">
   <div class="max-w-container mx-auto px-6">
 
-    <div class="text-center mb-16">
+    <div class="text-center mb-16" data-reveal>
       <span class="section-label">Perfil profesional</span>
       <h2 class="font-serif font-bold text-navy leading-snug"
           style="font-size: clamp(26px,3.5vw,44px);">
@@ -14,53 +14,68 @@ const { technical, human } = duality;
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-0.5 rounded-2xl overflow-hidden"
-         style="background:rgba(196,151,60,.18);">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px rounded-2xl overflow-hidden"
+         style="background:rgba(196,151,60,.15);" data-reveal data-reveal-delay="100">
 
-      <!-- Technical col -->
-      <div class="bg-navy-dark px-11 py-14">
-        <div class="flex items-center gap-2 mb-6">
-          <div class="w-9 h-9 rounded-full flex items-center justify-center text-base" style="background:rgba(196,151,60,.14);">
-            {technical.icon}
+      <!-- Technical -->
+      <div class="bg-navy-dark px-10 py-14 flex flex-col">
+        <div class="flex items-center gap-3 mb-7">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+               style="background:rgba(196,151,60,.12); border:1px solid rgba(196,151,60,.2);">
+            <!-- Settings/gear icon -->
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C4973C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
           </div>
           <span class="text-[10px] font-bold tracking-[2.5px] uppercase text-gold">{technical.label}</span>
         </div>
-        <h3 class="font-serif text-2xl font-bold text-white leading-snug mb-6">{technical.title}</h3>
-        <div class="flex flex-wrap gap-2 mb-7">
+        <h3 class="font-serif text-[22px] font-bold text-white leading-snug mb-6">{technical.title}</h3>
+        <div class="flex flex-wrap gap-2 mb-8">
           {technical.tags.map(t => (
-            <span class="px-3.5 py-1.5 rounded-full text-[11px] font-semibold text-gold-light"
-                  style="background:rgba(196,151,60,.1); border:1px solid rgba(196,151,60,.22);">{t}</span>
+            <span class="px-3 py-1 rounded-sm text-[10px] font-semibold text-gold-light"
+                  style="background:rgba(196,151,60,.08); border:1px solid rgba(196,151,60,.18);">{t}</span>
           ))}
         </div>
-        <ul class="list-none space-y-0">
-          {technical.items.map(item => (
-            <li class="flex gap-3 py-3.5 border-t text-sm text-white/72 leading-relaxed" style="border-color:rgba(255,255,255,.05);">
-              <span class="text-gold text-lg shrink-0 leading-relaxed">›</span>
+        <ul class="list-none flex-1">
+          {technical.items.map((item, i) => (
+            <li class={`flex gap-3 py-3.5 text-sm text-white/68 leading-relaxed ${i > 0 ? 'border-t' : ''}`}
+                style={i > 0 ? 'border-color:rgba(255,255,255,.05)' : ''}>
+              <span class="text-gold shrink-0 mt-[3px]">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
               {item}
             </li>
           ))}
         </ul>
       </div>
 
-      <!-- Human col -->
-      <div class="bg-white px-11 py-14">
-        <div class="flex items-center gap-2 mb-6">
-          <div class="w-9 h-9 rounded-full flex items-center justify-center text-base" style="background:rgba(13,27,42,.07);">
-            {human.icon}
+      <!-- Human -->
+      <div class="bg-white px-10 py-14 flex flex-col">
+        <div class="flex items-center gap-3 mb-7">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center shrink-0"
+               style="background:rgba(13,27,42,.06); border:1px solid rgba(13,27,42,.1);">
+            <!-- Heart icon -->
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3D4B5C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
           </div>
           <span class="text-[10px] font-bold tracking-[2.5px] uppercase text-navy">{human.label}</span>
         </div>
-        <h3 class="font-serif text-2xl font-bold text-navy leading-snug mb-6">{human.title}</h3>
-        <div class="flex flex-wrap gap-2 mb-7">
+        <h3 class="font-serif text-[22px] font-bold text-navy leading-snug mb-6">{human.title}</h3>
+        <div class="flex flex-wrap gap-2 mb-8">
           {human.tags.map(t => (
-            <span class="px-3.5 py-1.5 rounded-full text-[11px] font-semibold text-navy"
-                  style="background:rgba(13,27,42,.06); border:1px solid rgba(13,27,42,.1);">{t}</span>
+            <span class="px-3 py-1 rounded-sm text-[10px] font-semibold text-navy"
+                  style="background:rgba(13,27,42,.05); border:1px solid rgba(13,27,42,.09);">{t}</span>
           ))}
         </div>
-        <ul class="list-none space-y-0">
-          {human.items.map(item => (
-            <li class="flex gap-3 py-3.5 border-t text-sm text-oxford leading-relaxed" style="border-color:rgba(0,0,0,.05);">
-              <span class="text-gold text-lg shrink-0 leading-relaxed">›</span>
+        <ul class="list-none flex-1">
+          {human.items.map((item, i) => (
+            <li class={`flex gap-3 py-3.5 text-sm text-oxford leading-relaxed ${i > 0 ? 'border-t' : ''}`}
+                style={i > 0 ? 'border-color:rgba(0,0,0,.05)' : ''}>
+              <span class="text-oxford-light shrink-0 mt-[3px]">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+              </span>
               {item}
             </li>
           ))}

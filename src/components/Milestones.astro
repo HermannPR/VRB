@@ -5,7 +5,7 @@ import { milestones } from '../data/content';
 <section id="milestones" class="py-24" style="background:#070F18;">
   <div class="max-w-container mx-auto px-6">
 
-    <div class="text-center mb-16">
+    <div class="text-center mb-16" data-reveal>
       <span class="section-label">Experiencia estratégica</span>
       <h2 class="font-serif font-bold text-white"
           style="font-size: clamp(26px,3.5vw,44px);">
@@ -13,26 +13,31 @@ import { milestones } from '../data/content';
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      {milestones.map((m) => (
-        <div class="group relative rounded-xl p-9 border border-gold/10 transition-all duration-300 hover:border-gold/32 hover:-translate-y-1 overflow-hidden"
-             style="background:#162235;">
-          <!-- left gold bar -->
-          <span class="absolute top-0 left-0 w-1 h-full block"
-                style="background: linear-gradient(to bottom,#C4973C,transparent);"></span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {milestones.map((m, i) => (
+        <div class="group relative rounded-xl overflow-hidden border transition-all duration-300 hover:border-gold/30 hover:-translate-y-1"
+             style="background:#162235; border-color:rgba(196,151,60,0.08);"
+             data-reveal data-reveal-delay={i * 80}>
+          <!-- gold left bar -->
+          <span class="absolute top-0 left-0 w-[3px] h-full block"
+                style="background: linear-gradient(to bottom,#C4973C 0%,rgba(196,151,60,.1) 100%);"></span>
 
-          <p class="text-[10px] font-semibold tracking-[2.5px] uppercase text-gold mb-2.5">{m.period}</p>
-          <h3 class="font-serif text-xl font-bold text-white leading-snug mb-1.5">{m.role}</h3>
-          <p class="text-[13px] font-semibold text-oxford-light mb-5 tracking-wide">{m.company}</p>
-          <p class="text-[13px] leading-relaxed text-white/55 mb-5">{m.description}</p>
-          <ul class="list-none space-y-0">
-            {m.achievements.map(a => (
-              <li class="flex gap-2.5 py-1.5 border-t text-[13px] text-white/68 leading-snug" style="border-color:rgba(255,255,255,.05);">
-                <span class="text-gold text-[11px] shrink-0 pt-0.5">▸</span>
-                {a}
-              </li>
-            ))}
-          </ul>
+          <div class="pl-8 pr-8 pt-8 pb-8">
+            <p class="text-[9px] font-bold tracking-[3px] uppercase text-gold mb-2.5">{m.period}</p>
+            <h3 class="font-serif text-[20px] font-bold text-white leading-snug mb-1">{m.role}</h3>
+            <p class="text-[12px] font-semibold text-oxford-light mb-5 tracking-wide">{m.company}</p>
+            <p class="text-[13px] leading-relaxed text-white/50 mb-5 border-b pb-5"
+               style="border-color:rgba(255,255,255,.05);">{m.description}</p>
+            <ul class="list-none space-y-0">
+              {m.achievements.map((a, ai) => (
+                <li class={`flex gap-2.5 py-1.5 text-[12px] text-white/62 leading-snug ${ai > 0 ? 'border-t' : ''}`}
+                    style={ai > 0 ? 'border-color:rgba(255,255,255,.04)' : ''}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#C4973C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-[3px]" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                  {a}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       ))}
     </div>

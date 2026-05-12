@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
 import AuthorityBar from '../components/AuthorityBar.astro';
 import BigNumbers from '../components/BigNumbers';
-import FadeUp from '../components/FadeUp';
 import Duality from '../components/Duality.astro';
 import Milestones from '../components/Milestones.astro';
 import Formation from '../components/Formation.astro';
@@ -20,38 +19,27 @@ import { numbers } from '../data/content';
   <Hero />
   <AuthorityBar />
 
-  <!-- Big Numbers — React island with animated counters -->
+  <!-- Big Numbers — React island (counters need state) -->
   <section id="numbers" class="py-24 relative overflow-hidden" style="background:#070F18;">
-    <div class="absolute inset-x-0 top-0 h-px" style="background:linear-gradient(90deg,transparent,#C4973C,transparent);"></div>
-    <div class="absolute inset-x-0 bottom-0 h-px" style="background:linear-gradient(90deg,transparent,#C4973C,transparent);"></div>
+    <div class="absolute inset-x-0 top-0 h-px pointer-events-none"
+         style="background:linear-gradient(90deg,transparent,rgba(196,151,60,.4),transparent);"></div>
+    <div class="absolute inset-x-0 bottom-0 h-px pointer-events-none"
+         style="background:linear-gradient(90deg,transparent,rgba(196,151,60,.4),transparent);"></div>
     <div class="max-w-container mx-auto px-6">
-      <FadeUp client:visible>
-        <div class="text-center mb-16">
-          <span class="section-label">Impacto demostrable</span>
-          <h2 class="font-serif font-bold text-white" style="font-size:clamp(26px,3.5vw,44px);">
-            Resultados que hablan<br />por sí solos
-          </h2>
-        </div>
-      </FadeUp>
+      <div class="text-center mb-16" data-reveal>
+        <span class="section-label">Impacto demostrable</span>
+        <h2 class="font-serif font-bold text-white"
+            style="font-size:clamp(26px,3.5vw,44px);">
+          Resultados que hablan<br />por sí solos
+        </h2>
+      </div>
       <BigNumbers numbers={numbers} client:visible />
     </div>
   </section>
 
-  <FadeUp client:visible>
-    <Duality />
-  </FadeUp>
-
-  <FadeUp client:visible>
-    <Milestones />
-  </FadeUp>
-
-  <FadeUp client:visible>
-    <Formation />
-  </FadeUp>
-
-  <FadeUp client:visible>
-    <Contact />
-  </FadeUp>
-
+  <Duality />
+  <Milestones />
+  <Formation />
+  <Contact />
   <Footer />
 </Layout>

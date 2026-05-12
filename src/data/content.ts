@@ -5,40 +5,38 @@ export const hero = {
   subtext: 'Gerente Nacional de Cumplimiento · Especialista en PLD, Anticorrupción e Integridad Corporativa. 26 años transformando el cumplimiento legal en ventaja estratégica de negocio.',
   award: { source: 'Foro Jurídico · 2024', title: 'Una de las Abogadas más Influyentes de México' },
   ctas: {
-    primary: { label: 'Agenda una Consulta', href: 'https://wa.me/526672300300?text=Hola%20Ver%C3%B3nica%2C%20me%20gustar%C3%ADa%20contactarte%20sobre%20tu%20expertise%20en%20cumplimiento%20corporativo.' },
+    primary:   { label: 'Agenda una Consulta',  href: 'https://wa.me/526672300300?text=Hola%20Ver%C3%B3nica%2C%20me%20gustar%C3%ADa%20contactarte%20sobre%20tu%20expertise%20en%20cumplimiento%20corporativo.' },
     secondary: { label: 'Ver perfil LinkedIn →', href: 'https://www.linkedin.com/in/veronica-elena-rivera-barraza-/' },
   },
 } as const;
 
 export const authority = {
   logos: [
-    { code: 'GC',  name: 'Grupo Coppel',     sub: 'Gerente Nacional de Cumplimiento', bg: '#003087' },
-    { code: 'TEC', name: 'Tec de Monterrey', sub: 'Catedrática · 2024',              bg: '#003087' },
-    { code: 'ACA', name: 'ACAMS',             sub: 'Miembro Certificado · 2024',      bg: '#1B3A6B' },
-    { code: 'ANA', name: 'ANADE',             sub: 'Miembro · 2024',                 bg: '#7B1A1A' },
+    { name: 'Grupo Coppel',     sub: 'Gerente Nacional de Cumplimiento' },
+    { name: 'Tec de Monterrey', sub: 'Catedrática · 2024' },
+    { name: 'ACAMS',            sub: 'Miembro Certificado · 2024' },
   ],
   award: {
     label: 'Reconocimiento Oficial',
     title: 'Abogadas Influyentes de México 2024',
-    href: 'https://forojuridico.mx/abogadas-mas-influyentes-de-mexico-2024/',
+    href:  'https://forojuridico.mx/abogadas-mas-influyentes-de-mexico-2024/',
   },
 } as const;
 
 export type NumberCard =
-  | { icon: string; prefix?: string; target: number; format: 'thousands' | 'plain'; suffix?: string; label: string; sublabel: string }
-  | { icon: string; display: string; label: string; sublabel: string };
+  | { prefix?: string; target: number; format: 'thousands' | 'plain'; suffix?: string; label: string; sublabel: string }
+  | { display: string; label: string; sublabel: string };
 
 export const numbers: NumberCard[] = [
-  { icon: '👥', prefix: '+', target: 140000, format: 'thousands', label: 'Colaboradores capacitados',       sublabel: 'Primer Código de Ética\nde Grupo Coppel' },
-  { icon: '🥇', display: '1er Lugar',                             label: 'Ranking Integridad Corporativa 500', sublabel: '3 años consecutivos\n2021 · 2022 · 2023' },
-  { icon: '📉', target: 19,     format: 'plain', suffix: '%',     label: 'Reducción en tiempos',            sublabel: 'Atención de denuncias\ncorporativas' },
-  { icon: '⚖️', target: 26,     format: 'plain', suffix: '+',     label: 'Años de trayectoria',             sublabel: 'Legal, fiscal y\ncumplimiento corporativo' },
+  { prefix: '+', target: 140000, format: 'thousands', label: 'Colaboradores capacitados',          sublabel: 'Primer Código de Ética\nde Grupo Coppel' },
+  { display: '1er Lugar',                             label: 'Ranking Integridad Corporativa 500',  sublabel: '3 años consecutivos\n2021 · 2022 · 2023' },
+  { target: 19,  format: 'plain',  suffix: '%',       label: 'Reducción en tiempos',               sublabel: 'Atención de denuncias\ncorporativas' },
+  { target: 26,  format: 'plain',  suffix: '+',       label: 'Años de trayectoria',                sublabel: 'Legal, fiscal y\ncumplimiento corporativo' },
 ];
 
 export const duality = {
   technical: {
     label: 'Liderazgo Técnico',
-    icon: '⚙️',
     title: 'Arquitecta del andamiaje jurídico corporativo',
     tags: ['PLD / AML', 'ISO 37001', 'FCPA', 'Criminal Compliance', 'CNBV', 'Protección de Datos'],
     items: [
@@ -50,7 +48,6 @@ export const duality = {
   },
   human: {
     label: 'Liderazgo Humano',
-    icon: '🌿',
     title: 'Visión con propósito, forjada en resiliencia',
     tags: ['Liderazgo de Equipos', 'Comunicación Efectiva', 'Ética Corporativa', 'Formación de Talento'],
     items: [
@@ -94,7 +91,7 @@ export const milestones = [
     period: '2009 — 2013',
     role: 'Gerente Jurídico',
     company: 'Corporativo Casas ICI · Zona Noroeste',
-    description: 'Estrategia corporativa del grupo inmobiliario en la zona noroeste. Asesoría legal integral: corporativo, mercantil, laboral, administrativo y fiscal.',
+    description: 'Estrategia corporativa del grupo inmobiliario en la zona noroeste. Asesoría legal integral en materia corporativa, mercantil, laboral, administrativo y fiscal.',
     achievements: [
       'Gestión de créditos hipotecarios, puentes y fideicomisos',
       'Negociación con clientes y proveedores en esquemas crediticios complejos',
@@ -104,7 +101,7 @@ export const milestones = [
   {
     period: '2013 — 2014',
     role: 'Asesor Fiscal',
-    company: 'Procuraduría de la Defensa del Consumidor (PROFECO)',
+    company: 'Procuraduría de la Defensa del Consumidor',
     description: 'Orientación, recepción y conclusión de quejas en materia fiscal federal, estatal y cumplimiento de la Ley PLD.',
     achievements: [
       'Asesoría fiscal especializada a contribuyentes en materia federal y estatal',
@@ -115,9 +112,9 @@ export const milestones = [
 
 export const formation = {
   degrees: [
-    { icon: '🎓', year: '1999',        degree: 'Maestría en Derecho Fiscal',            institution: 'Universidad Autónoma de Guadalajara' },
-    { icon: '⚖️', year: '1998',        degree: 'Licenciatura en Derecho',               institution: 'Universidad Autónoma de Sinaloa' },
-    { icon: '🏫', year: '2024 · Actual', degree: 'Catedrática en Cumplimiento y Ética', institution: 'Tecnológico de Monterrey' },
+    { year: '1999',          degree: 'Maestría en Derecho Fiscal',            institution: 'Universidad Autónoma de Guadalajara' },
+    { year: '1998',          degree: 'Licenciatura en Derecho',               institution: 'Universidad Autónoma de Sinaloa' },
+    { year: '2024 · Actual', degree: 'Catedrática en Cumplimiento y Ética',   institution: 'Tecnológico de Monterrey' },
   ],
   certs: [
     'Certificación PLD/FT · ACAMS (2021)',
