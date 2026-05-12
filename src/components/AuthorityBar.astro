@@ -1,0 +1,43 @@
+---
+import { authority } from '../data/content';
+---
+
+<section id="authority" class="bg-white border-b border-light-gray">
+  <div class="flex items-stretch min-h-[78px] flex-wrap">
+
+    <div class="bg-navy-dark text-white/55 text-[10px] font-semibold tracking-[2.5px] uppercase px-7 flex items-center whitespace-nowrap shrink-0">
+      Trayectoria en
+    </div>
+
+    <div class="flex items-center flex-1 px-2 flex-wrap">
+      {authority.logos.map((logo, i) => (
+        <div class={`flex items-center gap-2.5 px-6 py-3.5 ${i < authority.logos.length - 1 ? 'border-r border-light-gray' : ''}`}>
+          <div
+            class="w-[34px] h-[34px] rounded-md flex items-center justify-center font-extrabold text-[10px] text-white shrink-0"
+            style={`background:${logo.bg};`}
+          >
+            {logo.code}
+          </div>
+          <div>
+            <div class="text-[13px] font-bold text-navy">{logo.name}</div>
+            <div class="text-[10px] text-oxford-light">{logo.sub}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <a
+      href={authority.award.href}
+      target="_blank" rel="noopener"
+      class="flex items-center gap-3 px-7 shrink-0 no-underline transition-opacity duration-200 hover:opacity-85"
+      style="background: linear-gradient(135deg,#070F18 0%,#1E3252 100%);"
+    >
+      <span class="text-2xl">🥇</span>
+      <div>
+        <div class="text-[9px] font-bold tracking-[2px] uppercase text-gold">{authority.award.label}</div>
+        <div class="text-[12px] font-bold text-white leading-snug">{authority.award.title}</div>
+      </div>
+    </a>
+
+  </div>
+</section>

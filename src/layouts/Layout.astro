@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Verónica Elena Rivera Barraza | Directiva de Élite en Cumplimiento Corporativo',
+  description = 'Abogada especialista en Cumplimiento Ético Internacional, PLD y Anticorrupción. Una de las Abogadas más Influyentes de México 2024. Gerente Nacional de Cumplimiento en Grupo Coppel.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? 'https://vrb.vercel.app');
+
+const schema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Verónica Elena Rivera Barraza',
+  jobTitle: 'Gerente Nacional de Cumplimiento',
+  worksFor: { '@type': 'Organization', name: 'Grupo Coppel' },
+  alumniOf: [
+    { '@type': 'EducationalOrganization', name: 'Universidad Autónoma de Guadalajara' },
+    { '@type': 'EducationalOrganization', name: 'Universidad Autónoma de Sinaloa' },
+  ],
+  award: 'Abogadas más Influyentes de México 2024 — Foro Jurídico',
+  knowsAbout: ['Prevención de Lavado de Dinero', 'Anticorrupción', 'ISO 37001', 'Criminal Compliance', 'Protección de Datos Personales'],
+  url: canonicalURL.href,
+  sameAs: ['https://www.linkedin.com/in/veronica-elena-rivera-barraza-/'],
+  address: { '@type': 'PostalAddress', addressLocality: 'Culiacán', addressRegion: 'Sinaloa', addressCountry: 'MX' },
+});
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content={canonicalURL} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale"      content="es_MX" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={schema} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

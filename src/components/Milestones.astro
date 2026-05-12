@@ -1,0 +1,41 @@
+---
+import { milestones } from '../data/content';
+---
+
+<section id="milestones" class="py-24" style="background:#070F18;">
+  <div class="max-w-container mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <span class="section-label">Experiencia estratégica</span>
+      <h2 class="font-serif font-bold text-white"
+          style="font-size: clamp(26px,3.5vw,44px);">
+        Hitos Profesionales
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {milestones.map((m) => (
+        <div class="group relative rounded-xl p-9 border border-gold/10 transition-all duration-300 hover:border-gold/32 hover:-translate-y-1 overflow-hidden"
+             style="background:#162235;">
+          <!-- left gold bar -->
+          <span class="absolute top-0 left-0 w-1 h-full block"
+                style="background: linear-gradient(to bottom,#C4973C,transparent);"></span>
+
+          <p class="text-[10px] font-semibold tracking-[2.5px] uppercase text-gold mb-2.5">{m.period}</p>
+          <h3 class="font-serif text-xl font-bold text-white leading-snug mb-1.5">{m.role}</h3>
+          <p class="text-[13px] font-semibold text-oxford-light mb-5 tracking-wide">{m.company}</p>
+          <p class="text-[13px] leading-relaxed text-white/55 mb-5">{m.description}</p>
+          <ul class="list-none space-y-0">
+            {m.achievements.map(a => (
+              <li class="flex gap-2.5 py-1.5 border-t text-[13px] text-white/68 leading-snug" style="border-color:rgba(255,255,255,.05);">
+                <span class="text-gold text-[11px] shrink-0 pt-0.5">▸</span>
+                {a}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

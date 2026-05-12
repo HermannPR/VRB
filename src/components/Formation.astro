@@ -1,0 +1,49 @@
+---
+import { formation } from '../data/content';
+---
+
+<section id="formation" class="bg-off-white py-24">
+  <div class="max-w-container mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <span class="section-label">Credenciales académicas</span>
+      <h2 class="font-serif font-bold text-navy"
+          style="font-size: clamp(26px,3.5vw,44px);">
+        Formación de Élite
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      {formation.degrees.map((d) => (
+        <div class="group relative bg-white border border-light-gray rounded-xl p-8 transition-all duration-300 hover:border-gold/38 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(13,27,42,.08)] overflow-hidden">
+          <span class="absolute bottom-0 left-0 right-0 h-[3px] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                style="background:linear-gradient(90deg,#C4973C,#DEB96A);"></span>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-5"
+               style="background:linear-gradient(135deg,#070F18,#1E3252);">
+            {d.icon}
+          </div>
+          <p class="text-[10px] font-semibold tracking-[2.5px] uppercase text-gold mb-1.5">{d.year}</p>
+          <h3 class="font-serif text-[17px] font-bold text-navy leading-snug mb-1.5">{d.degree}</h3>
+          <p class="text-xs text-oxford-light font-medium">{d.institution}</p>
+        </div>
+      ))}
+
+      <!-- Certs panel spans full width -->
+      <div class="col-span-full rounded-xl p-10 border border-gold/14"
+           style="background:#070F18;">
+        <span class="section-label">Certificaciones Especializadas</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {formation.certs.map(c => (
+            <div class="flex items-center gap-3 px-4 py-3.5 rounded-lg border border-gold/10"
+                 style="background:rgba(255,255,255,.03);">
+              <span class="w-2 h-2 rounded-full bg-gold shrink-0"></span>
+              <span class="text-[12px] text-white/78 font-medium leading-snug">{c}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

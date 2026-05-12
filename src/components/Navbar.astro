@@ -1,0 +1,38 @@
+---
+---
+<nav
+  id="navbar"
+  class="fixed top-0 w-full z-50 border-b border-gold/20 transition-[padding] duration-300"
+  style="background: rgba(7,15,24,0.96); backdrop-filter: blur(12px); padding: 16px 0;"
+>
+  <div class="max-w-container mx-auto px-6 flex justify-between items-center">
+    <a href="#hero" class="font-serif text-[18px] font-bold text-white no-underline">
+      VRB <span class="text-gold">·</span> Legal
+    </a>
+    <ul class="hidden md:flex gap-7 list-none m-0 p-0">
+      <li><a href="#numbers"    class="nav-link">Impacto</a></li>
+      <li><a href="#duality"    class="nav-link">Perfil</a></li>
+      <li><a href="#milestones" class="nav-link">Trayectoria</a></li>
+      <li><a href="#formation"  class="nav-link">Formación</a></li>
+      <li>
+        <a href="#contact"
+           class="nav-link bg-gold !text-navy-dark px-5 py-2 rounded font-bold hover:bg-gold-light transition-colors">
+          Contacto
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .nav-link {
+    @apply text-white/75 no-underline text-[13px] font-medium tracking-wide transition-colors duration-200 hover:text-gold;
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('navbar')!;
+  window.addEventListener('scroll', () => {
+    nav.style.padding = window.scrollY > 50 ? '10px 0' : '16px 0';
+  }, { passive: true });
+</script>

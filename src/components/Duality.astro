@@ -1,0 +1,72 @@
+---
+import { duality } from '../data/content';
+const { technical, human } = duality;
+---
+
+<section id="duality" class="bg-off-white py-24">
+  <div class="max-w-container mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <span class="section-label">Perfil profesional</span>
+      <h2 class="font-serif font-bold text-navy leading-snug"
+          style="font-size: clamp(26px,3.5vw,44px);">
+        Liderazgo técnico.<br />Liderazgo humano.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-0.5 rounded-2xl overflow-hidden"
+         style="background:rgba(196,151,60,.18);">
+
+      <!-- Technical col -->
+      <div class="bg-navy-dark px-11 py-14">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-base" style="background:rgba(196,151,60,.14);">
+            {technical.icon}
+          </div>
+          <span class="text-[10px] font-bold tracking-[2.5px] uppercase text-gold">{technical.label}</span>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-white leading-snug mb-6">{technical.title}</h3>
+        <div class="flex flex-wrap gap-2 mb-7">
+          {technical.tags.map(t => (
+            <span class="px-3.5 py-1.5 rounded-full text-[11px] font-semibold text-gold-light"
+                  style="background:rgba(196,151,60,.1); border:1px solid rgba(196,151,60,.22);">{t}</span>
+          ))}
+        </div>
+        <ul class="list-none space-y-0">
+          {technical.items.map(item => (
+            <li class="flex gap-3 py-3.5 border-t text-sm text-white/72 leading-relaxed" style="border-color:rgba(255,255,255,.05);">
+              <span class="text-gold text-lg shrink-0 leading-relaxed">›</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Human col -->
+      <div class="bg-white px-11 py-14">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-base" style="background:rgba(13,27,42,.07);">
+            {human.icon}
+          </div>
+          <span class="text-[10px] font-bold tracking-[2.5px] uppercase text-navy">{human.label}</span>
+        </div>
+        <h3 class="font-serif text-2xl font-bold text-navy leading-snug mb-6">{human.title}</h3>
+        <div class="flex flex-wrap gap-2 mb-7">
+          {human.tags.map(t => (
+            <span class="px-3.5 py-1.5 rounded-full text-[11px] font-semibold text-navy"
+                  style="background:rgba(13,27,42,.06); border:1px solid rgba(13,27,42,.1);">{t}</span>
+          ))}
+        </div>
+        <ul class="list-none space-y-0">
+          {human.items.map(item => (
+            <li class="flex gap-3 py-3.5 border-t text-sm text-oxford leading-relaxed" style="border-color:rgba(0,0,0,.05);">
+              <span class="text-gold text-lg shrink-0 leading-relaxed">›</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

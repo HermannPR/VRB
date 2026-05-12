@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans text-oxford bg-off-white overflow-x-hidden; }
+}
+
+@layer utilities {
+  .section-label {
+    @apply text-[11px] font-semibold tracking-[3px] uppercase text-gold block mb-4;
+  }
+  .container-inner {
+    @apply max-w-container mx-auto px-6;
+  }
+}
