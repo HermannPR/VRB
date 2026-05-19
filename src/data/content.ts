@@ -29,7 +29,7 @@ export type NumberCard =
 
 export const numbers: NumberCard[] = [
   { prefix: '+', target: 140000, format: 'thousands', label: 'Colaboradores capacitados',          sublabel: 'Primer Código de Ética\nde Grupo Coppel' },
-  { display: '1er Lugar',                             label: 'Ranking Integridad Corporativa 500',  sublabel: '3 años consecutivos\n2021 · 2022 · 2023' },
+  { display: '1er Lugar',                             label: 'Ranking Integridad Corporativa 500',  sublabel: '4 años consecutivos' },
   { target: 19,  format: 'plain',  suffix: '%',       label: 'Reducción en tiempos',               sublabel: 'Atención de denuncias\ncorporativas' },
   { target: 26,  format: 'plain',  suffix: '+',       label: 'Años de trayectoria',                sublabel: 'Legal, fiscal y\ncumplimiento corporativo' },
 ];
@@ -53,7 +53,7 @@ export const duality = {
     items: [
       'Incrementó 37 puntos porcentuales el nivel de confianza de denunciantes en el canal corporativo, transformando la cultura organizacional.',
       'La familia como motor de resiliencia; la ética como refugio de integridad. Valores que proyecta en cada equipo que lidera.',
-      'Catedrática activa en el Tecnológico de Monterrey, formando a la siguiente generación de profesionales en cumplimiento.',
+      'Catedrática en el Tecnológico de Monterrey, formando a la siguiente generación de profesionales en cumplimiento.',
       'Reconocida por USAID/ONU como Replicadora de Integridad Corporativa (2022), validando su liderazgo de impacto regional.',
     ],
   },
@@ -61,12 +61,22 @@ export const duality = {
 
 export const milestones = [
   {
+    period: '2024 — Actual',
+    role: 'Catedrática en Cumplimiento y Ética',
+    company: 'Tecnológico de Monterrey',
+    description: 'Docencia activa en cumplimiento corporativo y ética empresarial, transfiriendo experiencia práctica de alto nivel a la siguiente generación de abogados y ejecutivos.',
+    achievements: [
+      'Formación de profesionales en cumplimiento corporativo, PLD y ética organizacional',
+      'Diseño de casos de estudio basados en experiencia directiva real',
+    ],
+  },
+  {
     period: '2018 — Presente',
     role: 'Gerente Nacional de Cumplimiento',
     company: 'Grupo Coppel · México & Argentina',
     description: 'Responsable del programa global de integridad corporativa, anticorrupción y cumplimiento legal operativo en todos los centros de Grupo Coppel en México y el extranjero.',
     achievements: [
-      '1er lugar Ranking Integridad Corporativa 500 por 3 años consecutivos (2021–2023)',
+      '1er lugar Ranking Integridad Corporativa 500 por 4 años consecutivos',
       'Primer Código de Ética con más de 140,000 firmas digitales',
       '19% de reducción en tiempos de atención de denuncias',
       '3,932 certificados de riesgos legales de proveedores emitidos en 2024',
@@ -112,9 +122,8 @@ export const milestones = [
 
 export const formation = {
   degrees: [
-    { year: '1999',          degree: 'Maestría en Derecho Fiscal',            institution: 'Universidad Autónoma de Guadalajara' },
-    { year: '1998',          degree: 'Licenciatura en Derecho',               institution: 'Universidad Autónoma de Sinaloa' },
-    { year: '2024 · Actual', degree: 'Catedrática en Cumplimiento y Ética',   institution: 'Tecnológico de Monterrey' },
+    { year: '1999', degree: 'Maestría en Derecho Fiscal',  institution: 'Universidad Autónoma de Guadalajara' },
+    { year: '1998', degree: 'Licenciatura en Derecho',     institution: 'Universidad Autónoma de Sinaloa' },
   ],
   certs: [
     'Certificación PLD/FT · ACAMS (2021)',
