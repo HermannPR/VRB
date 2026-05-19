@@ -3,19 +3,32 @@ import { authority } from '../data/content';
 ---
 
 <section id="authority" class="bg-white border-b border-light-gray">
-  <div class="flex items-stretch min-h-[72px] flex-wrap">
+  <div class="flex items-stretch min-h-[80px] flex-wrap">
 
     <div class="bg-navy-dark text-white/40 text-[9px] font-semibold tracking-[3px] uppercase px-8 flex items-center whitespace-nowrap shrink-0 select-none">
       Trayectoria en
     </div>
 
     <div class="flex items-center flex-1 flex-wrap divide-x divide-light-gray">
-      {authority.logos.map((logo) => (
-        <div class="flex flex-col justify-center px-7 py-4">
-          <span class="text-[12px] font-bold text-navy tracking-wide">{logo.name}</span>
-          <span class="text-[10px] text-oxford-light mt-0.5 font-medium">{logo.sub}</span>
-        </div>
-      ))}
+
+      <!-- Grupo Coppel -->
+      <div class="flex flex-col justify-center items-center px-8 py-4 gap-1.5 min-w-[140px]">
+        <img src="/logos/coppel.svg" alt="Grupo Coppel" class="h-6 w-auto object-contain" />
+        <span class="text-[9px] text-oxford-light font-medium tracking-wide whitespace-nowrap">Gerente Nacional de Cumplimiento</span>
+      </div>
+
+      <!-- Tec de Monterrey -->
+      <div class="flex flex-col justify-center items-center px-8 py-4 gap-1.5 min-w-[140px]">
+        <img src="/logos/tec.svg" alt="Tecnológico de Monterrey" class="h-9 w-auto object-contain" />
+        <span class="text-[9px] text-oxford-light font-medium tracking-wide whitespace-nowrap">Catedrática · 2024</span>
+      </div>
+
+      <!-- ACAMS -->
+      <div class="flex flex-col justify-center items-center px-8 py-4 gap-1.5 min-w-[140px]">
+        <img src="/logos/acams.svg" alt="ACAMS" class="h-5 w-auto object-contain" />
+        <span class="text-[9px] text-oxford-light font-medium tracking-wide whitespace-nowrap">Miembro Certificado · 2024</span>
+      </div>
+
     </div>
 
     <a
@@ -24,7 +37,6 @@ import { authority } from '../data/content';
       class="flex items-center gap-3.5 px-8 shrink-0 no-underline transition-opacity duration-200 hover:opacity-80 border-l border-white/10"
       style="background: linear-gradient(135deg,#0D1B2A 0%,#1E3252 100%);"
     >
-      <!-- Award ribbon SVG -->
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4973C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="12" cy="8" r="6"/>
         <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
